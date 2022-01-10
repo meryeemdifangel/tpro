@@ -1,0 +1,32 @@
+.Footer{
+    height: 150px;
+    background-color: rgba(0,0,0,1);
+    border-top: 2px solid #3DE8E0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.copyRights{
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.copyRights:hover{
+    color: #3DE8E0;
+margin-left: 10px;
+margin-top: 10px; 
+}
+.socialMedia{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 15%;
+}
+.iconSM{
+    color: white;
+    
+}
