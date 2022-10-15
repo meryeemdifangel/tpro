@@ -1,48 +1,17 @@
 
-import './Hero.css';
-import isaac from '../../assets/isaac.mp4'
-import onne from '../../assets/onne.svg'
-import hi from '../../assets/hi.svg'
-import { Link } from 'react-scroll';
-
-
-
 
 function Hero() {
-
   return (
-  <div className='hero' id='hero' >
-  <video className='vid' src={isaac} autoPlay muted loop / >
-  <div className='meInfos'>
-<div className='hayDiv'>
-  <img src={hi} className='hiImg' />
-Hay brainies , It's
-</div>
-<div className='myName'>
-  Meryem Malak Dif
-</div>
-<div className='myFunction'>
-  React Developer+Mern Developer
-</div>
-<div className='myDesc'>
-I’m a react developer with front end development skills and a MERN stack developer.
-</div>
-<Link to='about' smooth={true} duration={500} spy={true} exact={true} className='firstBtn'>
-
-  More About Me
-
-</Link>
-
-  </div>
-  <img src={onne} className='meImg' />
-  
-  </div>
-
-
-
-
-  
-  );
+  <div class="h-screen w-full bg-[url('/src/assets/hero.svg')] bg-cover bg-center">
+    <div class="w-1/2 h-full flex flex-col items-start justify-center pl-5 " >
+<h1 class="font-bold text-2xl mb-1.5  ">SCHOOL OF AI ALGIERS</h1>
+<p class="font-semibold w-3/4 text-lg text-black/54">School of Algiers is a local community of developers, students and lovers of artificial intelligence in Algeria and we are 
+  a specific club at the higher national school of computer science (ESI Algiers).We organize workshops like AI Day , hackathons like Haick,international
+  conferences like NeurIPS Algiers Meetup 2021 and many other amazing events.
+</p>
+    </div>
+    </div>
+    );
 }
 
 export default Hero;
