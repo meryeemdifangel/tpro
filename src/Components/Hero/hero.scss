@@ -1,0 +1,39 @@
+.container{
+    position: absolute;
+    z-index: 1999;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box ;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    button{
+        border: none;
+        border-radius: 15px;
+        background-color: #01bf71;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 20px;
+//color: rgb(237, 233, 233);
+        font-weight: 600;
+        margin-top: 20px;
+    }
+    img{
+        height: 60%;
+        width: 50%;
+    animation: MoveUpDown 7s linear infinite;
+ 
+  }
+  
+  @keyframes MoveUpDown {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+  }
+}

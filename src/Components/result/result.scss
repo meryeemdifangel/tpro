@@ -1,0 +1,186 @@
+.tp{
+    position: absolute;
+    top: 100vh;
+    height: fit-content;
+background-color: black;
+    min-height: 100vh;
+    width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+    .bigcontain{
+        color: #fff;
+  height: fit-content;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .dataGrid_container{
+    width: 700px;
+    height: 380px;
+    color: #fff;
+
+  }
+  .dataGrid_containerr{
+    width: 700px;
+    height: 380px;
+    color: #fff;
+    div{
+        height: 40px;
+        width: 100%;
+        background-color: #cbdbd4;
+        color: rgb(29, 28, 28);
+        border-radius: 5px;
+        margin-bottom: 10px;
+        display: flex;
+        font-weight: 600;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+  }
+    .form-container{
+       color: black;
+       margin-top: 40px;
+       box-sizing: border-box;
+       height: 340px;
+       width: 70%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       margin-bottom: 20px;
+
+form{
+            //border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background-color: #fff;
+    height: 90%;
+    
+
+.formBottom{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 88%;
+    
+    
+    .contain-input{
+        width: 80%;
+        height: 40px;
+        border: 1px solid lightgray;
+        background-color: rgb(247, 249, 249);
+        .icon{
+color: rgb(194, 193, 193);
+        }
+    input{
+        height: 100%;
+        width: 90%;
+        background-color: rgb(247, 249, 249);
+        padding-left: 20px;
+        &::placeholder{
+            //padding-left: 20px;
+        }
+        &:focus{
+            outline: none;
+        }
+
+    }
+}
+
+bottom{
+    background-color: #01bf71;
+    border: none;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    background-color: #01bf71;
+    height: 40px;
+    width: 100px;
+    font-weight: 600;
+    color: #fff;
+}
+}
+
+
+}
+    }
+
+    .myTable{
+
+        margin-top: 20px;
+display: flex;
+flex-direction: column;
+width: 70%;
+.tableRow{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-top: none;
+
+}
+    }
+}
+}
+.header{
+    font-weight: 800;
+    font-size: 16px;
+    text-decoration: underline;
+}
+.style--cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.style-getResult{
+    background-color: #01bf71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #fff; 
+    
+}
+.myResults{
+    margin-top: 200px;
+    width: 700px;
+    height: 380px;
+    color: #fff;
+}
+input:focus{
+    outline: none;
+}
+.itemForm{
+    height: 40px;
+    width:60%;
+    margin-bottom: 20px;
+    background-color: #01bf71;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    color: #fff;
+    }

@@ -5,7 +5,9 @@ body{
   "Helvetica Neue", sans-serif;
 }
 .App {
-  text-align: center;
+  overflow: hidden;
+  height: fit-content;
+  background-color: #b9e7d4;
 }
 
 .karim{

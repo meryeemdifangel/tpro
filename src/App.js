@@ -1,11 +1,17 @@
 import './App.css';
 import Hero from './components/hero/hero';
+import Home from './components/home/home';
+import Tpro from './components/result/result';
 
 
 
 function App() {
   return (
-<Hero />
+    <div className='App'>
+    <Home />
+    <Hero />
+    <Tpro/>
+    </div>
     );
 }
 
