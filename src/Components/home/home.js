@@ -14,9 +14,9 @@ function Home() {
 
     useEffect(()=>{
 tl
-.to( homePage , 2, {height:0,opacity:0},2.3)
-.from( p1 , 1.7, { left:'-800px' },.5)
-.from( p2 ,1.7, { right:'-800px' ,  opacity:0 ,ease: "power3.inOut",},.5)
+.to( homePage , 2, {height:0,opacity:0},3.5)
+.from( p1 , 2, { left:'-800px' },.5)
+.from( p2 ,2, { right:'-800px' ,  opacity:0 ,ease: "power3.inOut",},.7)
 //.to( top , .5, { left:'-100%' },1)
 //.to( bottom , .5, { right:'-100%' ,  opacity:0 ,ease: "power3.inOut",},1)
 

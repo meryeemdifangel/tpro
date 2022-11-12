@@ -1,4 +1,5 @@
 .tp{
+    padding-bottom: 40px;
     position: absolute;
     top: 100vh;
     height: fit-content;
@@ -24,15 +25,18 @@ justify-content: center;
   }
   .dataGrid_containerr{
     width: 700px;
-    height: 380px;
+   // height: 380px;
     color: #fff;
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 40px;
     div{
         height: 40px;
         width: 100%;
         background-color: #cbdbd4;
         color: rgb(29, 28, 28);
         border-radius: 5px;
-        margin-bottom: 10px;
+        //margin-bottom: 10px;
         display: flex;
         font-weight: 600;
         align-items: center;
@@ -41,7 +45,7 @@ justify-content: center;
   }
     .form-container{
        color: black;
-       margin-top: 40px;
+       margin-top: 80px;
        box-sizing: border-box;
        height: 340px;
        width: 70%;
@@ -184,3 +188,77 @@ input:focus{
     letter-spacing: 1.5px;
     color: #fff;
     }
+    .containerBag {
+        width: 120px;
+        height: 100px;
+        border-radius: 6px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: #01bf71;
+animation: Move 7s linear infinite;
+
+    }
+      
+      .half-circle {
+        width: 24px;
+        height: 24px;
+        border-top-left-radius: 300%;
+        border-bottom-left-radius: 300%;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background: #fff;
+      }
+      .half-circleLeft {
+        width: 24px;
+        height: 24px;
+  
+        border-top-right-radius: 300%;
+        border-bottom-right-radius: 300%;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        background: #fff;
+      }
+      .mimi{
+        height: 60%;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        p{
+            font-weight: 700;
+        }
+      }
+      .bagsDiv{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 40px;
+      }
+      
+
+
+@keyframes Move{
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+      transform: translateX(-20px);
+  }
+}
+.mybag{
+
+    background-image: url("../../assets/sac.png");
+    background-position: center;
+    background-size: cover;
+    height: 350px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(28, 27, 27);
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 40px;
+}

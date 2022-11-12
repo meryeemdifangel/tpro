@@ -10,6 +10,7 @@ import LineWeightIcon from '@material-ui/icons/LineWeight';
 import gsap, { TweenMax, Power3, TimelineLite } from "gsap";
 import { useRef } from "react";
 import EditIcon from '@material-ui/icons/Edit';
+import myBag from "../../assets/sac.png"
 function Tpro() {
   let tl = gsap.timeline()
   let overlayRef = useRef();
@@ -28,7 +29,6 @@ function Tpro() {
   }
   const handleModify = () => {
     setModify(true)
-
   }
   function knapsack(items, capacity) {
     // This implementation uses dynamic programming.
@@ -43,51 +43,52 @@ function Tpro() {
       // Variable 'cap' is the capacity for sub-problems. In this example, 'cap' ranges from 1 to 6.
       var row = [];
       for (var cap = 1; cap <= capacity; cap++) {
-        row.push(getSolution(i, cap));
+        row.push(getSolution(i,cap));
       }
       memo.push(row);
     }
-
+  
     // The right-bottom-corner cell of the grid contains the final solution for the whole problem.
-    return (getLast());
-
-    function getLast() {
+    return(getLast());
+  
+    function getLast(){
       var lastRow = memo[memo.length - 1];
       return lastRow[lastRow.length - 1];
     }
-
-    function getSolution(row, cap) {
-      const NO_SOLUTION = { maxValue: 0, subset: [] };
+  
+    function getSolution(row,cap){
+      const NO_SOLUTION = {maxValue:0, subset:[]};
       // the column number starts from zero.
       var col = cap - 1;
       var lastItem = items[row];
       // The remaining capacity for the sub-problem to solve.
-      var remaining = cap - parseInt(lastItem.weight);
-
+      var remaining = cap - lastItem.weight;
+  
       // Refer to the last solution for this capacity,
       // which is in the cell of the previous row with the same column
       var lastSolution = row > 0 ? memo[row - 1][col] || NO_SOLUTION : NO_SOLUTION;
       // Refer to the last solution for the remaining capacity,
       // which is in the cell of the previous row with the corresponding column
       var lastSubSolution = row > 0 ? memo[row - 1][remaining - 1] || NO_SOLUTION : NO_SOLUTION;
-
+  
       // If any one of the items weights greater than the 'cap', return the last solution
-      if (remaining < 0) {
+      if(remaining < 0){
         return lastSolution;
       }
-
+      console.log(lastSolution)
+  
       // Compare the current best solution for the sub-problem with a specific capacity
       // to a new solution trial with the lastItem(new item) added
-      var lastValue = lastSolution.maxValue;
-      var lastSubValue = lastSubSolution.maxValue;
-
+      var lastValue = parseFloat(lastSolution.maxValue);
+      var lastSubValue = parseFloat(lastSubSolution.maxValue);
+  
       var newValue = lastSubValue + parseFloat(lastItem.value);
-      if (newValue >= lastValue) {
+      if(newValue >= lastValue){
         // copy the subset of the last sub-problem solution
         var _lastSubSet = lastSubSolution.subset.slice();
         _lastSubSet.push(lastItem);
-        return { maxValue: newValue, subset: _lastSubSet };
-      } else {
+        return {maxValue: newValue, subset:_lastSubSet};
+      }else{
         return lastSolution;
       }
     }
@@ -114,7 +115,7 @@ function Tpro() {
 
 
     const resultat = knapsack(itemsList, capacity)
-    console.log(resultat.subset)
+    console.log(resultat.maxValue)
     setResultArray(resultat.subset)
     setMaxWeight(resultat.maxValue)
   }
@@ -227,27 +228,12 @@ function Tpro() {
             </div>
           </form>
         </div>
-        {itemsList.length > 0 && <div className="dataGrid_container"><DataGrid
-          scrollbarSize={false}
-          width="100%"
-          rows={rows}
-          columns={columns}
-          pageSize={5}
-          rowsPerPageOptions={[5]}
-          sx={{
-            //backgroundColor:"black",
-            color: '#fff',
-
-          }}
-        />
-        </div>
-        }
 
 
-        {itemsList.length > 0 && <Link to="sacAdos" spy={true} smooth={true} offset={50} duration={800} className="style-getResult" onClick={getResult}>get results</Link>}
-        {resultsArray.length > 0 && <div style={{ textAlign: "center", marginBottom: "20px", fontWeight: "600" }} ref={el => { result = el }} >Maximum used weight is {maxWeight} </div>}
-        <div ref={el => { overlayRef = el }} className="dataGrid_containerr" name="sacAdos">
-          {resultsArray?.length > 0 && resultsArray.map((e) =>
+
+<div ref={el => { overlayRef = el }} className="dataGrid_containerr" >
+
+{itemsList?.length > 0 && itemsList.map((e) =>
           (
             <div >
               <p>{e.item}</p>
@@ -258,8 +244,28 @@ function Tpro() {
           ))
 
           }
-        </div>
+          </div>
+    
 
+
+        {itemsList?.length > 0 && capacity && <Link to="sacAdos" spy={true} smooth={true} offset={50} duration={800} className="style-getResult" onClick={getResult}>get results</Link>}
+        {resultsArray.length > 0 && <div  ref={el => { result = el }}  className="mybag">Total value  {maxWeight}</div>
+}
+      {resultsArray.length>0 &&  <div className="bagsDiv" name="sacAdos">
+{
+  resultsArray.length>0 && resultsArray.map((e)=>(
+    <div class="containerBag">
+    <div class="half-circleLeft"></div>
+<div className="mimi">
+<p>{e.value}</p>
+<p>{e.weight} KG </p>
+</div>
+<div class="half-circle"></div>
+</div>
+  ))
+}
+</div>
+}
       </div>
     </div>
   );
