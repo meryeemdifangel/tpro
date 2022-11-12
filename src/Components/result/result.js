@@ -101,12 +101,11 @@ function Tpro() {
   const addItem = (e) => {
     e.preventDefault()
 
-    if (weight != 0 && value != 0 && name !== "") {
+    if (weight != 0 && value != 0) {
       let objet = {
-        item: name, weight, value, id: itemsList.length
+        weight, value, id: itemsList.length
       }
       setItemsList(current => [...current, objet]);
-      //setName("")
       setWeight(0)
       setValue(0)
     }
@@ -199,9 +198,9 @@ function Tpro() {
     <div name="result" className="tp">
       <div className="bigcontain">
         <div className="form-container">
-          {(!done || modify) && <div style={{ width: "60%", height: "40px", marginBottom: "20px", display: "flex", alignItems: "center" }} >
-            <input value={capacity} onChange={e => setCapacity(e.target.value)} style={{ width: "80%", height: "100%", paddingLeft: "20px" }} placeholder="Total capacity" />
-            <button style={{ width: '20%', backgroundColor: "#01bf71", height: "100%" }} onClick={handleCapacity} >ok</button>
+          {(!done || modify) && <div style={{  width: "90%", height: "40px", marginBottom: "20px", display: "flex", alignItems: "center"  }} >
+            <input value={capacity} onChange={e => setCapacity(e.target.value)} style={{ width: "80%", height: "100%", paddingLeft: "20px",backgroundColor: "#fff" , borderTopLeftRadius :"8px" , borderBottomLeftRadius :"8px" }} placeholder="Total capacity" />
+            <button style={{ width: '20%', backgroundColor: "#2F3C7E", height: "100%" , color:"#fff" , fontWeight:"600" , borderTopRightRadius :"8px" , borderBottomRightRadius :"8px" }} onClick={handleCapacity} >ok</button>
           </div> }
              {done && !modify && <div className="itemForm">
               <div>Capacity {capacity}</div>
@@ -212,10 +211,7 @@ function Tpro() {
           <form onSubmit={addItem}>
            
             <div className="formBottom">
-              <div className="contain-input">
-                <input value={name} onChange={e => { setName(e.target.value) }} placeholder="Item name" />
-                <LocalMallIcon className="icon" />
-              </div>
+      
               <div className="contain-input">
                 <input onChange={e => { setWeight(e.target.value) }} value={weight} type="number" placeholder="Item weight" />
                 <LineWeightIcon className="icon" />
@@ -232,25 +228,33 @@ function Tpro() {
 
 
 <div ref={el => { overlayRef = el }} className="dataGrid_containerr" >
+{itemsList?.length > 0 && <div className="headTable">
+  <div>ID</div>
+  <div>Weight</div>
+  <div>Height</div>
 
-{itemsList?.length > 0 && itemsList.map((e) =>
+</div>
+}
+  {itemsList?.length > 0 && itemsList.map((e,index) =>
           (
-            <div >
-              <p>{e.item}</p>
-              <p>{e.weight}</p>
-              <p>{e.value}</p>
+            <div className="headTable">
+              <div>{index}</div>
+              <div>{e.weight}</div>
+              <div>{e.value}</div>
 
             </div>
           ))
-
           }
+
+
           </div>
-    
-
-
         {itemsList?.length > 0 && capacity && <Link to="sacAdos" spy={true} smooth={true} offset={50} duration={800} className="style-getResult" onClick={getResult}>get results</Link>}
-        {resultsArray.length > 0 && <div  ref={el => { result = el }}  className="mybag">Total value  {maxWeight}</div>
-}
+        {resultsArray.length > 0 && 
+        <>
+<div style={{fontWeight:"600" , fontSize:"18px" }} >Total bags value {maxWeight}</div>
+        <div  ref={el => { result = el }}  className="mybag"></div>
+        </>
+        }
       {resultsArray.length>0 &&  <div className="bagsDiv" name="sacAdos">
 {
   resultsArray.length>0 && resultsArray.map((e)=>(

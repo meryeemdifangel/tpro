@@ -7,7 +7,7 @@ function Hero() {
   <div className="container">
 <img src={cartable} />
 <Link to="result" spy={true} smooth={true} offset={50} duration={500} >
-<button  >Commencer</button>
+<button  >Start</button>
 
 </Link>
     </div>

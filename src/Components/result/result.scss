@@ -3,14 +3,16 @@
     position: absolute;
     top: 100vh;
     height: fit-content;
-background-color: black;
+//background-color: #fff;
     min-height: 100vh;
     width: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
+background-color: #FBEAEB;
+
     .bigcontain{
-        color: #fff;
+        color: black;
   height: fit-content;
   min-height: 100vh;
   width: 100%;
@@ -20,20 +22,18 @@ justify-content: center;
   .dataGrid_container{
     width: 700px;
     height: 380px;
-    color: #fff;
+    color: black;
 
   }
   .dataGrid_containerr{
-    width: 700px;
-   // height: 380px;
-    color: #fff;
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-gap: 40px;
-    div{
+    width: 600px;
+    color: black;
+display: flex;
+flex-direction: column;
+.headTable{
         height: 40px;
         width: 100%;
-        background-color: #cbdbd4;
+        background-color: rgba(253, 252, 252, 0.719);
         color: rgb(29, 28, 28);
         border-radius: 5px;
         //margin-bottom: 10px;
@@ -41,19 +41,37 @@ grid-gap: 40px;
         font-weight: 600;
         align-items: center;
         justify-content: space-evenly;
+        border-bottom: 3px solid #FBEAEB;
+
+        div{
+            width: 33.33%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div:nth-child(1){
+            border-right: 3px solid #FBEAEB;
+         }  
+         div:nth-child(2){
+             border-right: 3px solid #FBEAEB;
+     
+         }
     }
+
   }
     .form-container{
        color: black;
        margin-top: 80px;
        box-sizing: border-box;
-       height: 340px;
-       width: 70%;
+       height: 280px;
+       width: 50%;
        display: flex;
        flex-direction: column;
        align-items: center;
        justify-content: center;
        margin-bottom: 20px;
+      // box-shadow: 5px 10px #888888;
 
 form{
             //border: 1px solid black;
@@ -62,11 +80,10 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 90%;
     background-color: #fff;
     height: 90%;
-    
-
+    border-radius: 10px;    
 .formBottom{
    
     display: flex;
@@ -101,7 +118,7 @@ color: rgb(194, 193, 193);
 }
 
 bottom{
-    background-color: #01bf71;
+    background-color: #1D93D5;
     border: none;
     width: 100px;
     height: 40px;
@@ -110,11 +127,12 @@ bottom{
     justify-content: center;
 }
 button{
-    background-color: #01bf71;
+    background-color: #2F3C7E;
     height: 40px;
     width: 100px;
     font-weight: 600;
     color: #fff;
+    border-radius: 8px;
 }
 }
 
@@ -153,7 +171,7 @@ width: 70%;
 
 }
 .style-getResult{
-    background-color: #01bf71;
+    background-color: #2F3C7E;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,22 +181,24 @@ width: 70%;
     margin-bottom: 40px;
     font-weight: 600;
     color: #fff; 
+    border-radius: 8px;
     
 }
 .myResults{
     margin-top: 200px;
     width: 700px;
     height: 380px;
-    color: #fff;
+   // color: #fff;
 }
 input:focus{
     outline: none;
 }
 .itemForm{
     height: 40px;
-    width:60%;
+    width:90%;
+    border-radius: 8px;
     margin-bottom: 20px;
-    background-color: #01bf71;
+    background-color: #2F3C7E;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -186,7 +206,7 @@ input:focus{
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 1.5px;
-    color: #fff;
+   color: #fff;
     }
     .containerBag {
         width: 120px;
@@ -195,7 +215,7 @@ input:focus{
 display: flex;
 align-items: center;
 justify-content: space-between;
-background-color: #01bf71;
+background-color: #2F3C7E;
 animation: Move 7s linear infinite;
 
     }
@@ -226,6 +246,7 @@ animation: Move 7s linear infinite;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        color: #fff;
         p{
             font-weight: 700;
         }
@@ -253,10 +274,7 @@ animation: Move 7s linear infinite;
     background-size: cover;
     height: 350px;
     width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(28, 27, 27);
+    color: #fff;
     font-size: 18px;
     font-weight: 700;
 

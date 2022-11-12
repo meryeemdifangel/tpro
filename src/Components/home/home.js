@@ -19,17 +19,13 @@ tl
 .from( p2 ,2, { right:'-800px' ,  opacity:0 ,ease: "power3.inOut",},.7)
 //.to( top , .5, { left:'-100%' },1)
 //.to( bottom , .5, { right:'-100%' ,  opacity:0 ,ease: "power3.inOut",},1)
-
     },[])
   return (
   <div ref={el=>{homePage=el}} name="hero" className="container_home">
 <div>
-    
     <p ref={el=>{p1=el}}  > TP 1 : PROGRAMMATION DYNAMIQUE TPRO</p>
    <p ref={el=>{p2=el}} >Probleme de sac a dos</p>
-    
 </div>
-
     </div>
     );
 }
